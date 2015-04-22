@@ -151,7 +151,8 @@ function setupJqUi() {
             }(this)) : confirm(e) ? (store.clear(), Turbolinks.visit(location.pathname)) : void 0
         })
     })
-}.call(this), $(document).on("ready page:load", function() {
+}.call(this)
+/*, $(document).on("ready page:load", function() {
     var e = {theme: "movies", valueField: "title", labelField: "title", searchField: "title", options: [], create: !1, plugins: ["nano_scroller"], render: {option: function(e, t) {
                 for (var s = [], i = 0, r = e.abridged_cast.length; r > i; i++)
                     s.push("<span>" + t(e.abridged_cast[i].name) + "</span>");
@@ -169,7 +170,8 @@ function setupJqUi() {
             s.close(), s.clear()
         }), $(".selectize-select-movie").selectize(e), $("#select-car").selectize({options: [{id: "avenger", make: "dodge", model: "Avenger"}, {id: "caliber", make: "dodge", model: "Caliber"}, {id: "caravan-grand-passenger", make: "dodge", model: "Caravan Grand Passenger"}, {id: "challenger", make: "dodge", model: "Challenger"}, {id: "ram-1500", make: "dodge", model: "Ram 1500"}, {id: "viper", make: "dodge", model: "Viper"}, {id: "a3", make: "audi", model: "A3"}, {id: "a6", make: "audi", model: "A6"}, {id: "r8", make: "audi", model: "R8"}, {id: "rs-4", make: "audi", model: "RS 4"}, {id: "s4", make: "audi", model: "S4"}, {id: "s8", make: "audi", model: "S8"}, {id: "tt", make: "audi", model: "TT"}, {id: "avalanche", make: "chevrolet", model: "Avalanche"}, {id: "aveo", make: "chevrolet", model: "Aveo"}, {id: "cobalt", make: "chevrolet", model: "Cobalt"}, {id: "silverado", make: "chevrolet", model: "Silverado"}, {id: "suburban", make: "chevrolet", model: "Suburban"}, {id: "tahoe", make: "chevrolet", model: "Tahoe"}, {id: "trail-blazer", make: "chevrolet", model: "TrailBlazer"}], optgroups: [{id: "dodge", name: "Dodge"}, {id: "audi", name: "Audi"}, {id: "chevrolet", name: "Chevrolet"}], labelField: "model", valueField: "id", optgroupField: "make", optgroupLabelField: "name", optgroupValueField: "id", optgroupOrder: ["chevrolet", "dodge", "audi"], searchField: ["model"], plugins: ["optgroup_columns"]})
     }
-}), $(function() {
+})*/
+, $(function() {
     function e(e, t) {
         var s, i = [];
         i.push(e.type.toUpperCase() + ' url = "' + e.url + '"');

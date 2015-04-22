@@ -28,14 +28,14 @@ header('X-Frame-Options:ALL');
 
             <div class="panel-title">
                 <a href="#" class="v-mid badge badge-primary-lt badge-rounded badge-empty badge-grow"></a>
-                <span class="mid">From Server</span>
+                <span class="mid">Connexion internet</span>
             </div>
             <span class="pull-right text-semi"><i class="fa fa-info-circle"></i> <span>PSE</span></span>
         </div>
 
         <div class="panel-body panel-colorize">
             <p>
-                Text from server
+                Connexion au serveur réussie.
             </p>
         </div>
     </div>
