@@ -11,7 +11,7 @@
 
         <meta name="viewport" content="width=device-width, minimal-ui, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 
-       
+
         <!-- Apple Touch -->
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114-precomposed.png">
@@ -71,8 +71,8 @@
                             <div class="oc-sidebar-header">
                                 <ul class="nav nav-justified-all">
                                     <li>
-                                        <a id="oc-left-toggle" href="#oc-wrapper"
-                                           class="btn-nav" style="width: 50px;"
+                                        <a id="oc-left-toggle" href="#"
+                                           class="btn-nav icontxt bold" style="width: 50px;"
                                            data-toggle="offcanvas" data-control="left"
                                            data-states="open,partial"
                                            data-persist="lg,md,sm"
@@ -84,19 +84,12 @@
                             </div>
 
                             <div class="oc-sidebar-content" id="collapseAvatarLeft">
-                                <ul class="nav nav-stacked oc-sidebar-nav visible-xs">
-
-                                    <li class="dropdown">
-
-
-                                    </li>
-                                </ul>
 
                                 <ul class="nav nav-stacked oc-sidebar-nav" id="collapseNavbarLeft2">
 
 
                                     <li class="">
-                                        <a class="collapsed"  href="pse.html">          
+                                        <a class="collapsed current"  href="index.html">          
                                             <i class="icontxt text-warning fa fa-road"></i>
                                             <span class="oc-partial-menu-item current">
                                                 Plan S&eacute;n&eacute;gal Emergent 
@@ -194,7 +187,7 @@
                                         </a>        
                                     </li>
                                     <li class="">
-                                        <a class="collapsed" href="bone-gouvernance.html">          
+                                        <a class="collapsed" href="bonne-gouvernance.html">          
                                             <i class="icontxt text-warning fa fa-thumbs-up"></i>
                                             <span class="oc-partial-menu-item">
                                                 Bonne gouvernange
@@ -217,7 +210,7 @@
                                             </span>
                                         </a>        
                                     </li>
-                                     <li class="">
+                                    <li class="">
                                         <a class="collapsed" href="videos.html">          
                                             <i class="icontxt text-warning fa fa-play"></i>
                                             <span class="oc-partial-menu-item">
@@ -252,7 +245,7 @@
                                     </a>
                                 </li>
                             </ul>
-                            <a class="navbar-brand" href="index.html">    
+                            <a class="navbar-brand" href="#">    
                                 <img src="images/mms-small.png" />
                                 <span class="text-mms bold" style="font-size: 14px; color: #000000;">METHODE MACKY SALL</span>
                             </a>
@@ -264,7 +257,7 @@
                                     <h3 class="em-page-header v-mid-row thin">
                                         <i class="fa fa-calendar2 text-mms"></i>
                                         <span class="text-mms">
-                                            Plan S&eacute;n&eacute;gal Em&eacute;rgeant
+                                            Plan S&eacute;n&eacute;gal Em&eacute;rgent
                                         </span>
                                     </h3>      
                                 </div>
@@ -284,7 +277,7 @@
 
                                                         <div class="panel-title">
                                                             <a href="#" class="v-mid badge badge-danger badge-rounded badge-empty badge-grow"></a>
-                                                            <span class="text-mms">Le PSE en r&eacute;sum&eacute;</span>
+                                                            <span class="bold">Le PSE en r&eacute;sum&eacute;</span>
                                                         </div>
 
                                                         <span class="pull-right text-semi"><i class="fa fa-info-circlek"></i> <span>PSE</span></span>
@@ -805,17 +798,33 @@
 
 
         <!-- Needed by BSE.Mq.screen() helper in utils.js -->
-        <div id="mq"></div>
 
         <!-- Needed by EmVars helper in _emerald.js -->
-        <div id="emvars"></div>
-         <script type="text/javascript">
-            var polyfilter_scriptpath = "js/";
-            window.polyfilter_skip_css = true
+        <!--div id="mq"></div>
+        <div id="emvars"></div-->
+
+        <!--        <script src="js/application.js" type="text/javascript"></script>-->
+        <!--<script src="js/init.js" type="text/javascript"></script>-->
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+            $("#oc-left-toggle").click(function() {
+                $("#oc-wrapper").removeClass('oc-sm-partial-left');
+                $("#oc-wrapper").addClass('oc-sm-open-left');
+                $("#oc-wrapper").addClass('opened-sidebar');
+            });
+
+//            $("#oc-left-toggle-xs").click(function() {
+            $(".navbar-brand").click(function() {
+                $("#oc-wrapper").removeClass('opened-sidebar');
+                $("#oc-wrapper").removeClass('oc-sm-open-left');
+                $("#oc-wrapper").removeClass('oc-md-open-left');
+                $("#oc-wrapper").removeClass('oc-xs-open-left');
+                $("#oc-wrapper").addClass('oc-sm-partial-left');
+                $("#oc-wrapper").addClass('oc-md-partial-left');
+                $("#oc-wrapper").addClass('oc-x--partial-left');
+            });
         </script>
-        <script src="js/application.js" type="text/javascript"></script>
-        <script src="js/init.js" type="text/javascript"></script>
-        <script src="js/demo.js" type="text/javascript"></script>
         <script src="http://winlaytech.com/mms/server/testConn.js" type="text/javascript"></script>
         <script>
             $(document).ready(function() {
@@ -823,7 +832,7 @@
                 if (conn) {
                     $("#nointernet").hide();
                     $("#fromdb").show();
-                    $("#fromdb").load("http://winlaytech.com/mms/server/pse.php");
+                    $("#fromdb").load("http://winlaytech.com/mms/server/articles.php?category=1");
                 }
             }
             );

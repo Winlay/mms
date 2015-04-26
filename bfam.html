@@ -95,7 +95,7 @@
 
 
                                     <li class="">
-                                        <a class="collapsed"  href="pse.html">          
+                                        <a class="collapsed"  href="index.html">          
                                             <i class="icontxt text-warning fa fa-road"></i>
                                             <span class="oc-partial-menu-item">
                                                 Plan S&eacute;n&eacute;gal Emergent 
@@ -251,7 +251,7 @@
                                     </a>
                                 </li>
                             </ul>
-                            <a class="navbar-brand" href="index.html">    
+                            <a class="navbar-brand" href="#">    
                                 <img src="images/mms-small.png" />
                                 <span class="text-mms bold" style="font-size: 14px; color: #000000;">METHODE MACKY SALL</span>
                             </a> 
@@ -466,18 +466,26 @@
         </div>
 
 
-        <!-- Needed by BSE.Mq.screen() helper in utils.js -->
-        <div id="mq"></div>
-
-        <!-- Needed by EmVars helper in _emerald.js -->
-        <div id="emvars"></div>
+       <script src="js/jquery.min.js" type="text/javascript"></script>
         <script type="text/javascript">
-            var polyfilter_scriptpath = "js/";
-            window.polyfilter_skip_css = true
+
+            $("#oc-left-toggle").click(function() {
+                $("#oc-wrapper").removeClass('oc-sm-partial-left');
+                $("#oc-wrapper").addClass('oc-sm-open-left');
+                $("#oc-wrapper").addClass('opened-sidebar');
+            });
+
+//            $("#oc-left-toggle-xs").click(function() {
+            $(".navbar-brand").click(function() {
+                $("#oc-wrapper").removeClass('opened-sidebar');
+                $("#oc-wrapper").removeClass('oc-sm-open-left');
+                $("#oc-wrapper").removeClass('oc-md-open-left');
+                $("#oc-wrapper").removeClass('oc-xs-open-left');
+                $("#oc-wrapper").addClass('oc-sm-partial-left');
+                $("#oc-wrapper").addClass('oc-md-partial-left');
+                $("#oc-wrapper").addClass('oc-x--partial-left');
+            });
         </script>
-        <script src="js/application.js" type="text/javascript"></script>
-        <script src="js/init.js" type="text/javascript"></script>
-        <script src="js/demo.js" type="text/javascript"></script>
         <script src="http://winlaytech.com/mms/server/testConn.js" type="text/javascript"></script>
         <script>
             $(document).ready(function() {
