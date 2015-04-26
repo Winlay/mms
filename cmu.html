@@ -135,7 +135,7 @@
                                     <li class="dropdown">
                                         <a class="current text-warning" data-toggle="collapse" href="#cmu">          
                                             <i class="icontxt text-warning fa fa-smile-o"></i>
-                                            <span class="oc-partial-menu-item">
+                                            <span class="oc-partial-menu-item current">
                                                 Couverture Maladie Universelle
                                                 <b class="caret"></b>
                                             </span>
@@ -145,7 +145,7 @@
                                             <li class="current">
                                                 <a class="collapsed current text-warning" data-no-turbolink="true" href="cmu.html">
                                                     <i class="text-warning fa fa-smile-o"></i>
-                                                    Couverture Maladie Universelle
+                                                    La C.M.U
                                                 </a>
                                             </li>
 
@@ -156,13 +156,12 @@
                                                 </a>
                                             </li>
 
-                                            <li class="">
+                                            <li class="current">
                                                 <a class="collapsed current" data-no-turbolink="true" href="cmu-adhesion.html">
                                                     <i class="text-warning fa fa-check-square-o"></i>
                                                     Adhesions à la CMU
                                                 </a>
                                             </li>
-
                                         </ul>
                                     </li>
 
@@ -193,7 +192,7 @@
                                         </a>        
                                     </li>
                                     <li class="">
-                                        <a class="collapsed" href="bfam.html">          
+                                        <a class="collapsed" href="bonne-gouvernance.html">          
                                             <i class="icontxt text-warning fa fa-thumbs-up"></i>
                                             <span class="oc-partial-menu-item">
                                                 Bonne gouvernange
@@ -201,7 +200,7 @@
                                         </a>        
                                     </li>
                                     <li class="">
-                                        <a class="collapsed" href="bfam.html">          
+                                        <a class="collapsed" href="genre.html">          
                                             <i class="icontxt text-warning fa fa-users"></i>
                                             <span class="oc-partial-menu-item">
                                                 Genre
@@ -213,6 +212,14 @@
                                             <i class="icontxt text-warning fa fa-calendar"></i>
                                             <span class="oc-partial-menu-item">
                                                 Evenements
+                                            </span>
+                                        </a>        
+                                    </li>
+                                    <li class="">
+                                        <a class="collapsed" href="videos.html">          
+                                            <i class="icontxt text-warning fa fa-play"></i>
+                                            <span class="oc-partial-menu-item">
+                                                Vidéos
                                             </span>
                                         </a>        
                                     </li>
@@ -417,8 +424,8 @@
             window.polyfilter_skip_css = true
         </script>
         <script src="js/application.js" type="text/javascript"></script>
-        <!--<script src="js/init.js" type="text/javascript"></script>-->
-        <!--<script src="js/demo.js" type="text/javascript"></script>-->
+        <script src="js/init.js" type="text/javascript"></script>
+        <script src="js/demo.js" type="text/javascript"></script>
         <script src="http://winlaytech.com/mms/server/testConn.js" type="text/javascript"></script>
         <script>
             $(document).ready(function() {
@@ -426,7 +433,7 @@
                 if (conn) {
                     $("#nointernet").hide();
                     $("#fromdb").show();
-                    $("#fromdb").load("http://winlaytech.com/mms/server/cmu.php");
+                    $("#fromdb").load("http://winlaytech.com/mms/server/articles.php?category=3");
                 }
             }
             );
