@@ -70,7 +70,7 @@
                             <div class="oc-sidebar-header">
                                 <ul class="nav nav-justified-all">
                                     <li>
-                                        <a id="oc-left-toggle" href="#oc-wrapper"
+                                        <a id="oc-left-toggle" href="#"
                                            class="btn-nav" style="width: 50px;"
                                            data-toggle="offcanvas" data-control="left"
                                            data-states="open,partial"
@@ -240,7 +240,7 @@
                         <nav class="navbar navbar-default navbar-static-top navbar-inplace" role="navigation">
                             <ul class="nav navbar-nav navbar-left pull-left hidden-sm hidden-md hidden-lg">
                                 <li>
-                                    <a id="oc-left-toggle-xs" href="#oc-wrapper"
+                                    <a id="oc-left-toggle-xs" href="#"
                                        class="btn-nav pull-left "
                                        data-toggle="offcanvas" data-control="left"
                                        data-states="open,hidden"
@@ -323,6 +323,14 @@
                 $("#oc-wrapper").removeClass('oc-sm-partial-left');
                 $("#oc-wrapper").addClass('oc-sm-open-left');
                 $("#oc-wrapper").addClass('opened-sidebar');
+            });
+            $("#oc-left-toggle-xs").click(function() {
+                $("#oc-wrapper").removeClass('oc-sm-partial-left');
+                $("#oc-wrapper").removeClass('oc-xs-partial-left');
+                $("#oc-wrapper").removeClass('oc-md-partial-left');
+                $("#oc-wrapper").addClass('oc-sm-open-left');
+                $("#oc-wrapper").addClass('oc-xs-open-left');
+                $("#oc-wrapper").addClass('oc-md-open-left');
             });
 
 //            $("#oc-left-toggle-xs").click(function() {
