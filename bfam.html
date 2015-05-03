@@ -110,7 +110,7 @@
                                                 <b class="caret"></b>
                                             </span>
                                         </a>      
-                                        <ul class="collapse dropdown-menu in" id="realisations" >
+                                        <ul class="collapse dropdown-menu" id="realisations" >
 
                                             <li class="">
                                                 <a class="collapsed" data-no-turbolink="true" href="realisations.html">
@@ -124,46 +124,16 @@
                                                     Réalisations en images
                                                 </a>
                                             </li>
-                                            <li class="">
-                                                <a class="collapsed" data-no-turbolink="true" href="realisations-videos.html">
-                                                    <i class="text-warning fa fa-film"></i>
-                                                    Réalisations en vidéos
-                                                </a>
-                                            </li>
+                                            
                                         </ul>
                                     </li>
-                                    <li class="dropdown">
-                                        <a class=" text-warning" data-toggle="collapse" href="#cmu">          
+                                    <li class="">
+                                        <a class="collapsed" href="cmu.html">          
                                             <i class="icontxt text-warning fa fa-smile-o"></i>
                                             <span class="oc-partial-menu-item">
                                                 Couverture Maladie Universelle
-                                                <b class="caret"></b>
                                             </span>
-                                        </a>      
-                                        <ul class="collapse dropdown-menu in" id="cmu" >
-
-                                            <li class="">
-                                                <a class="collapsed text-warning" data-no-turbolink="true" href="cmu.html">
-                                                    <i class="text-warning fa fa-smile-o"></i>
-                                                    La C.M.U
-                                                </a>
-                                            </li>
-
-                                            <li class=" text-warning">
-                                                <a class="collapsed " data-no-turbolink="true" href="cmu-partenaires.html">
-                                                    <i class="text-warning fa fa-briefcase"></i>
-                                                    Partenaire de la C.M.U
-                                                </a>
-                                            </li>
-
-                                            <li class="">
-                                                <a class="collapsed" data-no-turbolink="true" href="cmu-adhesion.html">
-                                                    <i class="text-warning fa fa-check-square-o"></i>
-                                                    Adhesions à la C.M.U
-                                                </a>
-                                            </li>
-
-                                        </ul>
+                                        </a> 
                                     </li>
 
                                     <li class="">
@@ -201,10 +171,10 @@
                                         </a>        
                                     </li>
                                     <li class="">
-                                        <a class="collapsed" href="genre.html">          
+                                        <a class="collapsed" href="education.html">          
                                             <i class="icontxt text-warning fa fa-users"></i>
                                             <span class="oc-partial-menu-item">
-                                                Genre
+                                                Education
                                             </span>
                                         </a>        
                                     </li>
@@ -466,7 +436,7 @@
         </div>
 
 
-       <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/jquery.min.js" type="text/javascript"></script>
         <script type="text/javascript">
 
             $("#oc-left-toggle,#oc-left-toggle-xs").click(function() {
@@ -474,7 +444,7 @@
                 $("#oc-wrapper").addClass('oc-sm-open-left');
                 $("#oc-wrapper").addClass('opened-sidebar');
             });
-             $("#oc-left-toggle-xs").click(function() {
+            $("#oc-left-toggle-xs").click(function() {
                 $("#oc-wrapper").removeClass('oc-sm-partial-left');
                 $("#oc-wrapper").removeClass('oc-xs-partial-left');
                 $("#oc-wrapper").removeClass('oc-md-partial-left');
@@ -498,7 +468,10 @@
         <script src="http://winlaytech.com/mms/server/testConn.js" type="text/javascript"></script>
         <script>
             $(document).ready(function() {
-
+                $('.dropdown, a').click(function() {
+                    $(this).closest('.dropdown').find(".collapse").addClass('in');
+                    $(this).removeClass('collapsed');
+                });
                 if (conn) {
                     $("#nointernet").hide();
                     $("#fromdb").show();

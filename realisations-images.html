@@ -34,6 +34,19 @@
         <![endif]-->
 
         <style type="text/css">
+            .superbox{font-size:0}
+            .superbox-list{display:inline-block;*display:inline;zoom:1;width:12.5%;padding-top:4px;padding-right:4px;position:relative}
+            .superbox-list.active::before{content:"\f0d8";font-family:FontAwesome;display:block;position:absolute;left:43%;bottom:-24px;z-index:2;text-align:center;font-size:28px;color:#999999}
+            .superbox-img{max-width:100%;width:100%;cursor:pointer}
+            .superbox-list-content{display:none}
+            .superbox-show{font-size:13px;margin-top:4px;background-color:#999999;position:relative;width:100%;width:calc(100% - 4px);float:left;padding:25px;display:none}
+            .superbox-show:before,.superbox-show:after{content:" ";display:table}
+            .superbox-show:after{clear:both}.superbox-show .superbox-list-content{display:block}
+            .superbox-current-img{max-width:100%;float:left;margin-right:25px}.superbox-img:hover{opacity:0.8}
+            .superbox-float{float:left}.superbox-close{cursor:pointer}
+            .superbox-close::after{top:5px;right:5px;width:20px;height:20px;font-family:'FontAwesome';font-size:20px;content:'\f00d';opacity:0.7;cursor:pointer;position:absolute;cursor:pointer}
+            .superbox-close:hover{opacity:1}@media only screen and (min-width: 320px){.superbox-list{width:50%}}@media only screen and (min-width: 486px){.superbox-list{width:25%}}@media only screen and (min-width: 768px){.superbox-list{width:16.66666667%}}@media only screen and (min-width: 1025px){.superbox-list{width:12.5%}}
+
             .icontxt{
                 font-size: 16px;
             }
@@ -101,68 +114,38 @@
                                             </span>
                                         </a>    
                                     </li>
-                                    <li class=" dropdown">
-                                        <a class="" data-toggle="collapse" href="#realisations">          
+                                    <li class="dropdown">
+                                        <a class="collapsed" data-toggle="collapse" href="#realisations">          
                                             <i class="icontxt text-warning fa fa-thumbs-up"></i>
                                             <span class="oc-partial-menu-item current">
                                                 Réalisations
                                                 <b class="caret"></b>
                                             </span>
                                         </a>      
-                                        <ul class="collapse dropdown-menu in current" id="realisations" >
+                                        <ul class="collapse dropdown-menu current in" id="realisations" >
 
                                             <li class="">
-                                                <a class="collapsed" data-no-turbolink="true" href="realisations.html">
+                                                <a class="" data-no-turbolink="true" href="realisations.html">
                                                     <i class="text-warning fa fa-thumbs-up"></i>
                                                     Les réalisations
                                                 </a>
                                             </li>
                                             <li class="current">
-                                                <a class="collapsed current" data-no-turbolink="true" href="realisations-images.html">
+                                                <a class="current text-warning" data-no-turbolink="true" href="realisations-images.html">
                                                     <i class="text-warning fa fa-photo"></i>
                                                     Réalisations en images
                                                 </a>
                                             </li>
-                                            <li class="">
-                                                <a class="collapsed" data-no-turbolink="true" href="realisations-videos.html">
-                                                    <i class="text-warning fa fa-film"></i>
-                                                    Réalisations en vidéos
-                                                </a>
-                                            </li>
+
                                         </ul>
                                     </li>
-                                    <li class="dropdown">
-                                        <a class="text-warning" data-toggle="collapse" href="#cmu">          
+                                    <li class="">
+                                        <a class="collapsed" href="cmu.html">          
                                             <i class="icontxt text-warning fa fa-smile-o"></i>
                                             <span class="oc-partial-menu-item">
                                                 Couverture Maladie Universelle
-                                                <b class="caret"></b>
                                             </span>
-                                        </a>      
-                                        <ul class="collapse dropdown-menu in" id="cmu" >
-
-                                            <li class="">
-                                                <a class="collapsed text-warning" data-no-turbolink="true" href="cmu.html">
-                                                    <i class="text-warning fa fa-smile-o"></i>
-                                                    Couverture Maladie Universelle
-                                                </a>
-                                            </li>
-
-                                            <li class="text-warning">
-                                                <a class="collapsed" data-no-turbolink="true" href="cmu-partenaires.html">
-                                                    <i class="text-warning fa fa-briefcase"></i>
-                                                    Partenaire de la CMU
-                                                </a>
-                                            </li>
-
-                                            <li class="">
-                                                <a class="collapsed" data-no-turbolink="true" href="cmu-adhesion.html">
-                                                    <i class="text-warning fa fa-check-square-o"></i>
-                                                    Adhesions à la CMU
-                                                </a>
-                                            </li>
-
-                                        </ul>
+                                        </a> 
                                     </li>
 
                                     <li class="">
@@ -200,10 +183,10 @@
                                         </a>        
                                     </li>
                                     <li class="">
-                                        <a class="collapsed" href="genre.html">          
+                                        <a class="collapsed" href="education.html">          
                                             <i class="icontxt text-warning fa fa-users"></i>
                                             <span class="oc-partial-menu-item">
-                                                Genre
+                                                Education
                                             </span>
                                         </a>        
                                     </li>
@@ -215,7 +198,7 @@
                                             </span>
                                         </a>        
                                     </li>
-                                     <li class="">
+                                    <li class="">
                                         <a class="collapsed" href="videos.html">          
                                             <i class="icontxt text-warning fa fa-play"></i>
                                             <span class="oc-partial-menu-item">
@@ -272,8 +255,26 @@
                         </div>
 
                         <div class="container-fluid">
-                            <div class="superbox" data-scroller=".oc-scroll">
-                                <div class="superbox-list active">
+                            <div class="superbox" data-offset="54" data-scroller=".oc-scroll">
+                                <div class="superbox-list">
+                                    <img class="superbox-img" data-img="images/realisations/codeminier.jpg" src="images/realisations/codeminier.jpg">
+                                    <div class="superbox-list-content">
+                                        <h2>projet de Loi portant code minier</h2>
+                                        <p>
+                                            Le Président de la République a présidé ce jeudi 30 avril 2015 une rencontre de restitution du « projet de Loi portant code minier », un instrument clé dans le pilotage des réformes structurantes engagées dans le cadre du (PSE), afin de stimuler la contribution du secteur minier à l’émergence économique du Sénégal. Le secteur minier peut jouer un rôle déterminant dans le développement économique et social de nos Etats à condition que l’exploitation du potentiel minier contribue à la diversification de l’économie, favorise un meilleur partage des ressources et améliore les conditions de vie des populations.                                        
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="superbox-list">
+                                    <img class="superbox-img" data-img="images/realisations/carteegalite.jpg" src="images/realisations/carteegalite.jpg">
+                                    <div class="superbox-list-content">
+                                        <h2>Carte d'égalité des chances</h2>
+                                        <p>
+                                            Le Président de la République a présidé 
+                                            ce jeudi 30 avril 2015, la cérémonie de lancement de la carte d’égalité des chances pour les personnes handicapées. J’ai tenu à être présent parce que j’ai la conviction, très forte, que le handicap ne doit guère être comme une fatalité qui condamne à la marginalisation définitive. L’histoire des sociétés humaines est, en effet, pleine d’exemples de personnes ayant surmonté leur handicap pour offrir le meilleur d’eux-mêmes à la postérité, dans tous les domaines de l’activité humaine.                                        </p>
+                                    </div>
+                                </div>
+                                <div class="superbox-list">
                                     <img class="superbox-img" data-img="images/realisations/in_postesante_medinagounasss.jpg" src="images/realisations/in_postesante_medinagounasss.jpg">
                                     <div class="superbox-list-content">
                                         <h2>Inauguration du poste de santé de Medina Gounass</h2>
@@ -282,16 +283,18 @@
                                         </p>
                                     </div>
                                 </div>
+
                                 <div class="superbox-list">
                                     <img class="superbox-img" data-img="images/realisations/materielAgricole.jpg" src="images/realisations/materielAgricole.jpg">
                                     <div class="superbox-list-content">
                                         <h2>Recepteur materiel agricole</h2>
                                         <p>
                                             Réception de 1000 tracteurs destinés aux populations dans le cadre de la modernisation de l’agriculture sénégalaise
-                                            J’ai demandé, ici à Kaffrine, au gouvernement de consentir davantage d’efforts dans l’agriculture familiale et l’agro-business, afin d’impulser une véritable économie rurale orientée vers le renforcement de la sécurité alimentaire.                                        
+                                            Le Pr. MAcky SALL a demandé, à Kaffrine, au gouvernement de consentir davantage d’efforts dans l’agriculture familiale et l’agro-business, afin d’impulser une véritable économie rurale orientée vers le renforcement de la sécurité alimentaire.                                        
                                         </p>
                                     </div>
                                 </div>
+
                                 <div class="superbox-list">
                                     <img class="superbox-img" data-img="images/realisations/univSineSaloum.jpg" src="images/realisations/univSineSaloum.jpg">
                                     <div class="superbox-list-content">
@@ -301,6 +304,7 @@
                                         </p>
                                     </div>
                                 </div>
+
                                 <div class="superbox-list">
                                     <img class="superbox-img" data-img="images/realisations/busTataKaolack.jpg" src="images/realisations/busTataKaolack.jpg">
                                     <div class="superbox-list-content">
@@ -310,6 +314,7 @@
                                         </p>
                                     </div>
                                 </div>
+
                                 <div class="superbox-list">
                                     <img class="superbox-img" data-img="images/realisations/transcotiere.jpg" src="images/realisations/transcotiere.jpg">
                                     <div class="superbox-list-content">
@@ -321,6 +326,7 @@
                                         </p>
                                     </div>
                                 </div>
+
                                 <div class="superbox-list">
                                     <img class="superbox-img" data-img="images/realisations/newBusDDD.jpg" src="images/realisations/newBusDDD.jpg">
                                     <div class="superbox-list-content">
@@ -330,6 +336,7 @@
                                         </p>
                                     </div>
                                 </div>
+
                                 <div class="superbox-list">
                                     <img class="superbox-img" data-img="images/realisations/pontAbdouDiallo.jpg" src="images/realisations/pontAbdouDiallo.jpg">
                                     <div class="superbox-list-content">
@@ -339,6 +346,7 @@
                                         </p>
                                     </div>
                                 </div>
+
                                 <div class="superbox-list">
                                     <img class="superbox-img" data-img="images/realisations/stadeAlineSitoe.jpg" src="images/realisations/stadeAlineSitoe.jpg">
                                     <div class="superbox-list-content">
@@ -348,7 +356,27 @@
                                     </div>
                                 </div>
 
-
+                                <div class="superbox-list">
+                                    <img class="superbox-img" data-img="images/realisations/prodac.jpg" src="images/realisations/prodac.jpg">
+                                    <div class="superbox-list-content">
+                                        <h2>LE PROGRAMME PILOTE DES DAC PREND SON ENVOL</h2>
+                                        <p>
+                                            Les plaines du Séfa dans le département de Sédhiou abritent cette année, un programme de mise en œuvre de la terre appelé, «domaine agricole communautaire» (DAC). L’objectif est de combattre la pauvreté à travers la production à grande échelle et la création d’emplois. Il s’agit d’une expérience pilote en passe d’être étendue dans d’autres contrées du Sénégal comme à Kédougou. Les acteurs étaient sur le terrain pour apprécier l’état de progression des réalisations.
+                                            Le domaine agricole communautaire de Séfa emploie directement un millier de producteurs et autant de subalternes dans le cadre de l’expérimentation de la phase-pilote d’une agriculture intensive au Sénégal. 
+                                            A en croire, Jean Pierre Senghor, le coordonnateur national du programme des domaines agricoles communautaires (PRODAC), ce programme se comporte bien sur le terrain avec des perspectives de résorption substantielle du sous emploi.
+                                            «C’est un programme du Chef de l’Etat qui nous a donné les moyens de le réussir au grand bonheur des populations locales, notamment les jeunes. Cela participe de la résorption des questions de sous-emploi des jeunes. Aujourd’hui, je ne vois pas un secteur qui est pourvoyeur d’emploi comme celui de l’agriculture. Je suis très fier de voir que les résultats», a-t-il indiqué. 
+                                            Très engagés, les jeunes producteurs des domaines de Séfa réclament un accompagnement technique et un équipement adéquat notamment l’aménagement des points pour optimiser les défis. «Nous demandons au Chef de l’Etat de doter la zone de Séfa du matériel de l’agriculture mais aussi, d’aménager ici, des forages qui permettront de travailler toute l’année. Nous voudrions également l’installation d’un lycée moderne agricole à Bloc», soutiennent-ils. 
+                                            En visite de travail à Sédhiou en septembre dernier, le ministre de la jeunesse, de l’emploi et de la construction les avait rassurés en promettant la réalisation imminente des besoins ci-haut exprimés. 
+                                            «Le centre de Guirina qui formait des jeunes dans des métiers de l’agriculture va être restauré par le projet PAPES. Le matériel va suivre, les tracteurs sont en route, le forage ont commencé à être foré et  la production va fonctionner douze mois sur douze afin que l’émigré qui a renoncé à l’aventure puisse se rendre compte de la pertinence de ce projet», a indiqué Mame Mbaye Niang.
+                                            Dans les domaines agricoles communautaires de Séfa, 1.300 hectares de maïs sont emblavés pour une production attendue de 12.000 tonnes. 
+                                            A la crainte de voir ces récoltes moisir sur place, le président fondateur du groupe SEDIMA s’est engagé à tout acheter. «Nous sommes capables d’absorber la totalité des productions faites sur place. Cela, nous l’avons décidé de commun accord dans mon bureau avec M. Senghor et une partie de son équipe», a confié Babacar Ngom.
+                                            Mamadou Diallo, le président du comité de gestion domaine agricole communautaire de Séfa ne tarit pas d’éloges pour s’en réjouir. «Quoi de mieux que trouver acquéreur à un produit abondamment récolté. Nous nous réjouissons de la volonté de SEDIMA de coopérer avec nous producteurs au travers les activités du DAC de Séfa. C’est encourageant et nous ferons de notre mieux pour accroitre les rendements», a-t-il soutenu. 
+                                            Malgré les rendez-vous manqués et une mauvaise répartition spatio-temporelle des pluies, les techniciens de l’agriculture, par la voix de  Hamadou Baldé, directeur régional du développement rural (DRDR) de Sédhiou  rassurent du comportement des spéculations aussi bien pour le maïs que le riz et le sorgho entre autres.
+                                            A terme, fait-on observer, l’intensification de l’agriculture au niveau de ces DAC permettra de réaliser une autosuffisance alimentaire et une offre de prestation assez dissuasive des candidats à l’émigration clandestine. 
+                                            Toutefois, il faut des infrastructures structurantes telles que les unités de transformation, les routes et pistes de production pour garantir un avenir qui sourit à ces masses juvéniles.
+                                        </p>
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
@@ -359,7 +387,7 @@
 
         </div>
 
-<script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/jquery.min.js" type="text/javascript"></script>
         <script type="text/javascript">
 
             $("#oc-left-toggle").click(function() {
@@ -368,7 +396,7 @@
                 $("#oc-wrapper").addClass('opened-sidebar');
             });
 
- $("#oc-left-toggle-xs").click(function() {
+            $("#oc-left-toggle-xs").click(function() {
                 $("#oc-wrapper").removeClass('oc-sm-partial-left');
                 $("#oc-wrapper").removeClass('oc-xs-partial-left');
                 $("#oc-wrapper").removeClass('oc-md-partial-left');
@@ -389,21 +417,100 @@
                 $("#oc-wrapper").addClass('oc-x--partial-left');
             });
         </script>
-        
+
         <!-- Needed by BSE.Mq.screen() helper in utils.js -->
         <div id="mq"></div>
 
         <!-- Needed by EmVars helper in _emerald.js -->
         <div id="emvars"></div>
-        <script type="text/javascript">
-            var polyfilter_scriptpath = "js/";
-            window.polyfilter_skip_css = true
-        </script>
-        <script src="js/application.js" type="text/javascript"></script>
+
+        <!--<script src="js/application.js" type="text/javascript"></script>-->
         <script src="http://winlaytech.com/mms/server/testConn.js" type="text/javascript"></script>
         <script>
-            $(document).ready(function() {
 
+            /*
+             SuperBox v1.0.0
+             by Todd Motto: http://www.toddmotto.com
+             Latest version: https://github.com/toddmotto/superbox
+             
+             Copyright 2013 Todd Motto
+             Licensed under the MIT license
+             http://www.opensource.org/licenses/mit-license.php
+             
+             SuperBox, the lightbox reimagined. Fully responsive HTML5 image galleries.
+             */
+            ;
+            (function($) {
+
+                $.fn.SuperBox = function(options) {
+
+                    var superbox = $('<div class="superbox-show"></div>');
+                    var superboximg = $('<img src="" class="superbox-current-img">');
+//                    var superboxcontent = $('<p class="">'+$(this).find('.superbox-list-content').html()+'</p>');
+                    var superboxcontent = $('<p class=""></p>');
+                    var superboxclose = $('<div class="superbox-close"></div>');
+
+                    superbox.append(superboximg).append(superboxcontent).append(superboxclose);
+
+                    return this.each(function() {
+
+                        $('.superbox-list').click(function() {
+
+                            var currentimg = $(this).find('.superbox-img');
+                            var currentContent = $(this).find('.superbox-list-content');
+                            var imgData = currentimg.data('img');
+                            var offset = $('.superbox').attr('data-offset');
+                            offset = (offset) ? offset : 0;
+
+                            superboximg.attr('src', imgData);
+                            $('.superbox-list').removeClass('active');
+                            superboxcontent.html('');
+                            superboxcontent.append('<p class="content">' + currentContent.html() + '</p>');
+
+                            if ($('.superbox-current-img').css('opacity') == 0) {
+                                $('.superbox-current-img').animate({opacity: 1});
+                            }
+
+                            if ($(this).next().hasClass('superbox-show')) {
+                                superbox.toggle();
+                            } else {
+                                superbox.insertAfter(this).css('display', 'block');
+                                $(this).addClass('active');
+                            }
+
+                            $('html, body').animate({
+                                scrollTop: superbox.position().top - currentimg.width() - offset
+                            }, 'medium');
+
+                        });
+
+                        $('.superbox').on('click', '.superbox-close', function() {
+                            $('.superbox-current-img').animate({opacity: 0}, 200, function() {
+                                $(this).closest('.superbox').find('.superbox-list').removeClass('active');
+                                $('.superbox-show').slideUp();
+                            });
+                        });
+
+                    });
+                };
+            })(jQuery);
+
+            /*   
+             Template Name: Color Admin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+             Version: 1.3.0
+             Author: Sean Ngu
+             Website: http://www.seantheme.com/color-admin-v1.3/
+             */
+//var handleSuperboxGallery=function(){"use strict";$(window).load(function(){$(".superbox").SuperBox()})};var Gallery=function(){"use strict";return{init:function(){handleSuperboxGallery()}}}()
+
+
+
+            $(document).ready(function() {
+                $('.dropdown, a').click(function() {
+                    $(this).closest('.dropdown').find(".collapse").addClass('in');
+                    $(this).removeClass('collapsed');
+                });
+                $(".superbox").SuperBox();
                 if (conn) {
                     $("#nointernet").hide();
                     $("#fromdb").show();
